@@ -1,0 +1,20 @@
+<div *ngIf="skill">
+  <div>
+    <label>First Name: </label> {{skill.key}}
+  </div>
+  <div>
+    <label>Age: </label> {{skill.age}}
+  </div>
+  <div>
+    <label>Active: </label> {{skill.active}}
+  </div>
+ 
+  <span class="button is-small btn-primary" *ngIf='skill.active' (click)='updateActive(false)'>Inactive</span>
+ 
+  <span class="button is-small btn-primary" *ngIf='!skill.active' (click)='updateActive(true)'>Active</span>
+ 
+  <span class="button is-small btn-danger" (click)='deleteSkill()'>Delete</span>
+ 
+  <hr/>
+</div>
+

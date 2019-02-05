@@ -1,0 +1,83 @@
+<h3>Create Skill</h3>
+
+<div [hidden]="submitted" >
+  <form (ngSubmit)="onSubmit()" class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="profile" >Profile</label>
+        <input type="text" class="form-control" [(ngModel)]="skill.profile" name="profile">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="clientName" >Client Name</label>
+        <input type="text" class="form-control" [(ngModel)]="skill.clientName" name="clientName">
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="form-group">
+        <label for="data_init" >Data init</label>
+        <input type="text" class="form-control" [(ngModel)]="skill.data_init" name="data_init">
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="form-group">
+        <label for="data_end" >Data end</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="skill.data_end" name="data_end">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="description" >Description</label>
+        <textarea [(ngModel)]="skill.description" name="description"  cols="30" rows="10"></textarea>       
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="skillList" >Skill List</label>
+        <input type="text" class="form-control" required [(ngModel)]="skill.skillList" name="skillList">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="urls" >Urls</label>
+        <input type="text" class="form-control" required [(ngModel)]="skill.urls" name="urls">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="actually" >actually</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="skill.actually" name="actually">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+    <div class="col-sm-6">
+
+    </div>
+  
+  </form>
+</div>
+
+<!--
+ <div *ngIf="skill" class="progress">
+	<div class="progress-bar progress-bar-info progress-bar-striped"
+		role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+		aria-valuemin="0" aria-valuemax="100"
+		[ngStyle]="{width:progress.percentage+'%'}">
+		{{progress.percentage}}%</div>
+</div>
+
+<label class="btn btn-default"> <input type="file"
+	(change)="selectFile($event)">
+</label>
+ 
+<button class="btn btn-success" [disabled]="!selectedFiles"
+	(click)="upload()">Upload</button>
+-->
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newSkills()">Add</button>
+</div>
+

@@ -1,0 +1,119 @@
+@import './variables';
+@import './mixins';
+
+
+
+.ducky{
+    header{
+        height: $navHeight;
+        .navbar{
+            padding: 0;
+            margin: 0;
+            &-nav{
+                @include background-opacity(#000, 0.5);
+                padding: 1rem;
+                li{
+                    padding: 0 0.5rem;
+                    a{ 
+                        
+                    }
+                }
+            }
+            img{
+                width: $logoBig;
+                padding: 1rem;
+            }
+            &-brand{
+                padding: 0;
+            }
+            .navbar-toggler-icon{
+                background: $primaryColor;
+                @include border-radius(3px);
+                margin: 15% auto;
+                display: block;
+                width: 45px;
+                height: 45px;
+                position: relative;
+                display: block;
+                width: 1.5em;
+                height: 0.25em;
+                cursor: pointer;
+                @include transition(transform, .2s, ease);
+                &:before, 
+                &:after{
+                    @include border-radius(3px);
+                    @include transition(transform, .3s, ease);
+
+                }
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 1.5em;
+                    height: 0.25em;
+                    top: -0.5em;
+                    background: $primaryColor;
+                  }
+                &:after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 1.5em;
+                    height: 0.25em;
+                    top: 0.5em;
+                    background: $primaryColor;
+                }
+                &.close {
+                    width: 45px;
+                    height: 45px;
+                    margin: 15% auto;
+                    left: 10px;
+                    position: relative;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    background: transparent;
+                    transform: rotate(-180deg);
+                }
+                &.close:before,  &.close:after {
+                    transition: transform .3s ease;
+                }
+                &.close:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 1.5em;
+                    height: 0.25em;
+                    top: 0;
+                    background:  $primaryColor;
+                    transform: rotate(-45deg);
+                }
+                &.close:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 1.5em;
+                    height: 0.25em;
+                    top: 0;
+                    background:  $primaryColor;
+                    transform: rotate(45deg);
+            }
+        }
+    }
+    
+}
+    
+    
+    .site-footer{
+        @include background-opacity(#F00, 0.5);
+        &__address-col{
+            a{ 
+                text-align: right;
+                &:hover{
+                    //&transicionHoverA
+                }
+            }
+        }
+    }
+}
+

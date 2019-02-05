@@ -1,0 +1,25 @@
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  
+}
+@mixin transition($prop, $values...) {
+    -moz-#{$prop}: $values;
+    -ms-#{$prop}: $values;
+    -o-#{$prop}: $values;
+    -webkit-#{$prop}: $values;
+    $prop: $values;
+  }
+
+
+/*******/
+
+
+
+  
+
+  

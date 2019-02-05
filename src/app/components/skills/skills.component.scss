@@ -1,0 +1,256 @@
+@import '../../../assets/sass/mixins';
+@import '../../../assets/sass/variables';
+.timeline{
+    position: relative;
+    padding:4px 0 0 0;
+    margin-top:22px;
+    list-style: none;
+    li{
+        .timeline__image {
+            z-index: 100;
+            position: absolute;
+            left: 50%;
+            border: 4px solid $primaryColor;
+            @include border-radius(100%);
+            background-color: $white;
+            box-shadow: 0 0 5px $primaryColor;
+            width: 200px;
+            height: 200px;
+            margin-left: -100px;
+            .img-circle { 
+                @include border-radius(50%);
+                width: 94%;
+                max-width: 94%;
+                margin: 3%;
+            }
+            h4 {
+                margin-top: 12px;
+                font-size: 10px;
+                line-height: 14px;
+            }
+        }
+        &:nth-child(even) {
+           position: relative;
+           margin-bottom: 50px;
+           height: 180px;
+           right: -100px;
+        }
+        &:nth-child(odd) {
+            position: relative;
+            margin-bottom: 50px;
+            height: 180px;
+            left:-100px;
+        }
+        &:before,
+        &:after{
+            content: " ";
+            display: table;
+        }
+        &:after{
+            clear: both;
+            min-height: 170px;
+        }
+        .timeline__panel {
+            position: relative;
+            float: left;
+            width: 41%;
+            padding: 0 20px 20px 30px;
+            text-align: right;
+        }
+        &:before {
+            right: auto;
+            left: -15px;
+            border-right-width: 15px;
+            border-left-width: 0;
+        }
+        &:after {
+            right: auto;
+            left: -14px;
+            border-right-width: 14px;
+            border-left-width: 0;
+        }
+        &:nth-child(odd) .line:before {
+            content: "";
+            position: absolute;
+            top: 60px;
+            bottom: 0;
+            left: 690px;
+            width: 4px;
+            height:340px;
+            background-color:  $primaryColor;
+            -ms-transform: rotate(-44deg); 
+            -webkit-transform: rotate(-44deg); 
+            transform: rotate(-44deg);
+            box-shadow: 0 0 5px  $primaryColor;
+        }
+        &:nth-child(even) .line:before  {
+            content: "";
+            position: absolute;
+            top: 60px;
+            bottom: 0;
+            left: 450px;
+            width: 4px;
+            height:340px;
+            background-color:  $primaryColor;
+            -ms-transform: rotate(44deg); 
+            -webkit-transform: rotate(44deg); 
+            transform: rotate(44deg);
+            box-shadow: 0 0 5px  $primaryColor;
+        }
+    }
+    .timeline__inverted{
+        &>.timeline__panel{
+            float: right;
+            padding: 0 30px 20px 20px;
+            text-align: left;
+            &:before{
+                right: auto;
+                left: -15px;
+                border-right-width: 15px;
+                border-left-width: 0;
+            }
+            &:after{
+                right: auto;
+                left: -14px;
+                border-right-width: 14px;
+                border-left-width: 0;
+            }
+            &.timeline__heading h4 {
+                margin-top:22px;
+                margin-bottom: 4px;
+                padding:0;
+                color: #b3b3b3;
+                &.subheading {
+                    margin:0;
+                    padding:0;
+                    text-transform: none;
+                    font-size:18px;
+                    color:#333333;
+                }
+            }
+            
+        }
+    }
+    &>li:last-child {
+        margin-bottom: 0;
+    }
+    &__body{
+        &>p,
+        &>ul{            
+            margin-bottom: 0;
+            color:#808080;
+        }
+    }
+}
+
+
+
+
+/* Medium Devices, .visible-md-* 
+@media (min-width: 992px) and (max-width: 1199px) {
+  .timeline > li:nth-child(even) {
+    margin-bottom: 0px;
+    min-height: 0px;
+    right: 0px;
+  }
+  .timeline > li:nth-child(odd) {
+    margin-bottom: 0px;
+    min-height: 0px;
+    left: 0px;
+  }
+  .timeline>li:nth-child(even) .timeline-image {
+    left: 0;
+    margin-left: 0px;
+  }
+  .timeline>li:nth-child(odd) .timeline-image {
+    left: 690px;
+    margin-left: 0px;
+  }
+  .timeline > li:nth-child(even) .timeline-panel {
+    width: 76%;
+    padding: 0 0 20px 0px;
+    text-align: left;
+  }
+  .timeline > li:nth-child(odd) .timeline-panel {
+    width: 70%;
+    padding: 0 0 20px 0px;
+    text-align: right;
+  }
+  .timeline > li .line {
+    display: none;
+  }
+}*/
+/* Small Devices, Tablets 
+@media (min-width: 768px) and (max-width: 991px) {
+  .timeline > li:nth-child(even) {
+    margin-bottom: 0px;
+    min-height: 0px;
+    right: 0px;
+  }
+  .timeline > li:nth-child(odd) {
+    margin-bottom: 0px;
+    min-height: 0px;
+    left: 0px;
+  }
+  .timeline>li:nth-child(even) .timeline-image {
+    left: 0;
+    margin-left: 0px;
+  }
+  .timeline>li:nth-child(odd) .timeline-image {
+    left: 520px;
+    margin-left: 0px;
+  }
+  .timeline > li:nth-child(even) .timeline-panel {
+    width: 70%;
+    padding: 0 0 20px 0px;
+    text-align: left;
+  }
+  .timeline > li:nth-child(odd) .timeline-panel {
+    width: 70%;
+    padding: 0 0 20px 0px;
+    text-align: right;
+  }
+  .timeline > li .line {
+    display: none;
+  }
+}*/
+/* Custom, iPhone Retina 
+@media only screen and (max-width: 767px) {
+  .timeline > li:nth-child(even) {
+    margin-bottom: 0px;
+    min-height: 0px;
+    right: 0px;
+  }
+  .timeline > li:nth-child(odd) {
+    margin-bottom: 0px;
+    min-height: 0px;
+    left: 0px;
+  }
+  .timeline>li .timeline-image {
+    position: static;
+    width: 150px;
+    height: 150px;
+    margin-bottom:0px;
+  }
+  .timeline>li:nth-child(even) .timeline-image {
+    left: 0;
+    margin-left: 0;
+  }
+  .timeline>li:nth-child(odd) .timeline-image {
+    float:right;
+    left: 0px;
+    margin-left:0;
+  }
+  .timeline > li:nth-child(even) .timeline-panel {
+    width: 100%;
+    padding: 0 0 20px 14px;
+  }
+  .timeline > li:nth-child(odd) .timeline-panel {
+    width: 100%;
+    padding: 0 14px 20px 0px;
+  }
+  .timeline > li .line {
+    display: none;
+  }
+}
+*/
