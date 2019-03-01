@@ -1,0 +1,70 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/mixins';
+body {
+    
+    
+  }
+.home{
+    margin-top: 5px;             
+    @include calc(height, '100vh - 190px' );
+}
+
+.home_box{
+    height: $duckySize;
+    padding: 1rem;
+    position: relative;
+    > div {
+        position: absolute;
+        --container-height: calc(100vw - var(--margen));
+        height: --container-height;
+        @include calc(height, '100vh - 200px' );
+        @include calc(width, '100vh - 200px' );       
+        opacity: 1;
+        filter: opacity(1);
+        @include animation (images, $duration: 1s, $timing-function: ease, $iteration-count: 1);
+    }
+    .text-1, .text-2, .text-3{
+        @include animation (text, $duration: 1s, $timing-function: ease, $iteration-count: 1);
+    }
+
+}
+
+
+@keyframes images {
+  0% {
+    top: -200%;
+    opacity: 0;
+    filter: opacity(0);
+    
+  }
+  100% {
+    opacity: 1;
+    filter: opacity(100);
+    top: 0;
+  }
+}
+@keyframes text {
+    0% {
+      bottom: -200%;
+      opacity: 0;
+      filter: opacity(0);
+      
+    }
+    100% {
+      opacity: 1;
+      filter: opacity(100);
+      top: 0;
+    }
+  }
+
+  @for $i from 1 through 3 {
+    .home_box div {
+
+      &:nth-child(#{$i}) {
+        animation-delay: $i * (3s);
+      }
+    }
+  }
+  
+
+  

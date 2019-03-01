@@ -15,10 +15,20 @@ export const environment = {
 };
 
 /*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
+ Nombre del proyecto
+patoaparato
+ID del proyecto 
+patoaparato-p4t0
+Ubicación de Cloud Firestore
+eur3 (europe-west)
+Clave de API de la web
+AIzaSyBoMemxAUKKO6vcPEfZzd8i-lYqZA4-kW8
+Configuración pública
+Esta configuración controla las instancias de tu proyecto que se muestran al público.
+Nombre público 
+project-p4t0
+Correo electrónico de asistencia 
+patoaparato.com@gmail.com	
+
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.

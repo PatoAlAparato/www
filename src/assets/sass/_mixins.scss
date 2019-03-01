@@ -7,16 +7,64 @@
     border-radius: $radius;
     background-clip: padding-box;  
 }
-@mixin transition($prop, $values...) {
-    -moz-#{$prop}: $values;
-    -ms-#{$prop}: $values;
-    -o-#{$prop}: $values;
-    -webkit-#{$prop}: $values;
-    $prop: $values;
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
   }
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+@mixin keyframe ($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation ($name,
+                  $duration: 3s,
+                  $timing-function:ease,
+                  $delay:0s,
+                  $iteration-count: 1,
+                  $transform-origin: top left,  
+                  $direction: normal,
+                  $fill-mode: none,
+                  $play-state: running) {
+                -webkit-animation: $name $duration $timing-function $delay $iteration-count $direction $fill-mode $play-state;
+                -moz-animation: $name $duration $timing-function $delay $iteration-count $direction $fill-mode $play-state;
+                animation: $name $duration $timing-function $delay $iteration-count $direction $fill-mode $play-state;
+}
+
+/*************************************************************************************
+
+/ -- Slide Animations -- //
+
+// Slide Out Top from Center
+@include keyframe(animation-slide-out-up) {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(0,-100%);
+    }
+}
 
 
-/*******/
+
+***/
 
 
 

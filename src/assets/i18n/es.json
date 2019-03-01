@@ -1,0 +1,18 @@
+{
+    "principal" : {
+        "texto": "Lista de frutas"
+    },
+    "nav" : {
+        "lang": "Español",
+        "en": "Inglés",
+        "es": "Español",
+        "home": "Home",
+        "skills": "Superpoderes",
+        "skills2": "Skills2",
+        "skills3": "Skills3"
+    },
+    "footer": {
+        "author": "Patricia Antón Martín",
+        "rights": "Todos los derechos reservados."
+    }
+}

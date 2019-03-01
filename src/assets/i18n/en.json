@@ -1,0 +1,19 @@
+{
+    "principal" : {
+        "texto": "List de fruits"
+    },
+    "nav" : {
+        "lang": "English",
+        "en": "English",
+        "es": "Spanish",
+
+        "home":"Home",
+        "skills": "Skills",
+        "skills2": "Skills2",
+        "skills3": "Skills3"
+    },
+    "footer": {
+        "author": "Patricia Antón Martín",
+        "rights": "All rights reserved."
+    }
+}

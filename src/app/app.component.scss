@@ -1,0 +1,160 @@
+@import '../assets/sass/variables';
+@import '../assets/sass/mixins';
+button:focus {
+    outline: 0px dotted;
+    outline:0px auto transparent;
+}
+/*    svg burgyer menu */   
+.navbar-expand-lg .navbar-toggler{
+    display: none;
+}
+svg {
+    width: 58px;
+    height: 55px;
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+ 
+    path {
+        fill: none;
+        transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+        stroke-width: 40px;
+        stroke-linecap: round;
+        stroke: #c00000;
+        stroke-dashoffset: 0px;
+    
+        &#top,
+        &#bottom {
+            stroke-dasharray: 240px 950px;
+        }
+        &#middle {
+            stroke-dasharray: 240px 240px;
+        }
+    }
+}
+.lnr{
+    font-size: 2rem;
+    line-height: 2.4rem;
+}
+.cross{
+    path{
+        &#top,
+        &#bottom{
+        stroke-dashoffset: -650px;
+        stroke-dashoffset: -650px;
+        }
+        &#middle {
+        stroke-dashoffset: -115px;
+        stroke-dasharray: 1px 220px;
+        }
+    }
+} 
+header{
+    height: $navHeight;
+    
+    .navbar{
+        padding: 0;
+        margin: 0;            
+        &-nav{
+            @include background-opacity(#000, 0.8);
+            padding: 1rem;
+            li{
+                padding: 0 0.5rem;
+                a{ 
+                    color: #fff;
+                    &:hover{
+                        color: #ccc;
+                    }
+                }
+            }
+        }
+        img{
+            width: $logoBig;
+            padding: 0.5rem;
+        }
+        &-brand{
+            padding: 0;
+        }
+        &-toggler{                                                                      
+            position: relative;
+            display: block;
+            padding: 0;
+            box-shadow: none;
+            margin-right: 2rem;
+            width: $navBarIconSize;
+            background-color: $black;                
+            @include border-radius(50%);
+            height: $navBarIconSize;                
+            border: none;                     
+        }               
+    }     
+    .dropdown{
+        &-menu{
+            @include background-opacity(#000, 0.8);
+        }
+        &-item{
+
+        }
+        .active{
+            background: $primaryColor;
+        }
+
+    }  
+}
+
+    
+    .site-footer{
+        height: $footerHeight;
+        @include animation (gradient, $duration: 15s, $timing-function:ease, $iteration-count: infinite);
+        background: linear-gradient(-45deg, #c00, rgb(82, 2, 2), #000, rgb(39, 6, 100));
+        background-size: 400% 400%;
+        width: 100%;
+        padding: 0.5em 1em;
+        color: #fff;        
+        h4, a{
+            font-size: 1.1rem;
+            font-weight:300;
+            color: #FFF;
+            span{
+                font-size: 0.9em;
+                font-weight: 100;
+            }
+        }a{ 
+            &:hover{
+                @include transition(all,2s,ease-out);
+                //&transicionHoverA
+            }
+        }
+       
+    }
+    .verticalFooter{        
+       //@include animation (rotar, $duration: 100s, $timing-function:ease, $iteration-count: 1, $transform-origin: top left);
+       
+    }
+    @include keyframe( gradient ) {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+    @include keyframe( rotar ) {
+        from {
+
+            transform: translate(0,0) rotate(0deg);
+        }
+        to{
+
+            transform: translate(3%, -50%) rotate(90deg) ;
+        }
+    }
+
+
+
+
+    
+
+
