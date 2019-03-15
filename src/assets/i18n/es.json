@@ -7,12 +7,48 @@
         "en": "Inglés",
         "es": "Español",
         "home": "Home",
-        "skills": "Superpoderes",
-        "skills2": "Skills2",
-        "skills3": "Skills3"
+        "portfolio": "Portafolio",
+        "skills":" Superpoderes",
+        "experience": "Experiencia",
+        "intranet": "Intranet",
+        "contact": "Contacto"
     },
     "footer": {
         "author": "Patricia Antón Martín",
         "rights": "Todos los derechos reservados."
+    },
+    "": {
+        
+    },
+    "form": {        
+        "register": "Registro",
+        "login": "Login",
+        "registro": "Registro",
+        "registerGoogle": "Registro con Google",
+        "loginGoogle": "Login con Google",
+        "email": "Email",
+        "password": "Password",
+        "username": "Nombre de usuario",
+        "redirectToLogin" : "¿Aún no tiene cuenta?",
+        "forgotpassword": "¿Olvidó su contraseña?",
+        "continuewithgoogle": "Continua con Google",
+        "or" : "O"        
+    },
+    "skills": {
+        "angularDesc" : "Al final todo se puede consultar, y teniendo los conceptos claros Angular puede ser una herramienta muy valiosa. Al final reuno ya 4-5 meses usando Angular, y todo lo mejor de mí lo doy en esta página web.",
+        "html5Desc" : "Más de una década usando Html, y todos sus avances, cambios, compatibilidades.... que voy a contar a estas alturas de Html5 un pasito necesario del 4.1 transicional",
+        "css3Desc" : "Css3 también fue una evolución necesaria muy necesaria, y sobretodo nos ha hecho la vida más fácil.",
+        "scssDesc" : "Aún haymuchas cosas por investigar, todo el potencial usado esta en este portfolio, hay mucha literatura sobre esto y combinado con metodologías tipo BEM y Bootstrap, una forma eficaz y rápida y todavía en evolución",
+        "bootstrap4Desc" : "Desde Bootstrap 2.3 a Bootstrap 4.x, todo es muy parecido, cada vez más eficaz y ahora implementan Flexbox, rem, y medidas de height y width de viewport que nos hacen la vida muy fácil.",
+        "javaScriptDeSC" : "Honestamente necesito una mano que me acompañe en el desarrollo de javascript nativo aunque he hecho muchas cosas con el Dom y algunos proyectos como un tetrix o una calculadora.",
+        "nodeDesc" : "Uso Node para levantar un servidor, TODO:node apuntes ",
+        "firebaseDesc" : "Uso Firebase para solventar el back y ser autonoma, en el fondo es una herramienta muy fácil de usar ",
+        "responsiveDesc" : "Toda mi vida la mido ya en %. ¿Sabíais que el ser humano posee un 75 % de agua al nacer y cerca del 60 % en la edad adulta?",
+        "userExperienceTit" : "Experiencia de usuario",
+        "userExperienceDesc" : "Los años de experiencia y la literatura diarua en google hacen que al final los proyectos tengan una base lógica de uso, segun el públicoal que van dirigidos",
+        "designTit" : "Diseño",
+        "designDesc" : "Uso el paquete Adobe desde hace décadas, estudié guías de diseño y experiencia de usuario, y en muchos proyectos he trabajado en el rol de diseñadora también",
+        "ilustradoraTit" : "Ilustración",
+        "ilustradoraDesc" : "No tiene que ver mucho con el desarrollo front perolo llevo en el corazón y TODO hacer aparatado de galeria firebase"
     }
 }

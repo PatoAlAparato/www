@@ -1,45 +1,27 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-
-      <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
-      </div>
-
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPwd required>
-      </div>
-
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.Register(userEmail.value, userPwd.value)">
-      </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
-
-      <!-- Continue with Facebook -->
-      <!--<div class="formGroup">
-        <button type="button" class="btn facebookBtn" (click)="authService.FacebookAuth()">
-          <i class="fab fa-facebook"></i>
-          Continue with Facebook
-        </button>
-      </div>-->
-    </div>
-
-    <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" [routerLink]="['login']" >Log In</span></span>
+<div class="form login mb-4">
+    <div class="row ">
+      <div class="col-4 offset-4">
+        <h3 class="text-center">{{ 'form.register' | translate }}</h3>
+        <div class="form-group">
+          <input type="email" class="form-control col-8 offset-2" placeholder="{{ 'form.email' | translate }}" #userEmail required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control col-8 offset-2" placeholder="{{ 'form.password' | translate }}" #userPwd required>
+        </div>       
+          
+        <div class="row d-flex justify-content-center">
+          <div class="form-group">
+            <input type="button" class="btn btnPrimary" value="{{ 'form.registro' | translate }}" (click)="authService.Register(userEmail.value, userPwd.value)">
+          </div>
+          <div class="p-2">
+              <p class="orInner">{{ 'form.or' | translate }}</p>
+          </div> 
+          <div class="form-group">
+            <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+              <i class="fab fa-google-plus-g"></i> {{ 'form.continuewithgoogle' | translate }}
+            </button>
+          </div>
+        </div>
     </div>
   </div>
-
 </div>

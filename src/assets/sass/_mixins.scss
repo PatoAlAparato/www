@@ -1,3 +1,4 @@
+@import './variables';
 @mixin background-opacity($color, $opacity: 0.3) {
     background: $color; /* The Fallback */
     background: rgba($color, $opacity);
@@ -6,6 +7,14 @@
     -webkit-border-radius: $radius;
     border-radius: $radius;
     background-clip: padding-box;  
+}
+@mixin user-select {
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 @mixin calc($property, $expression) {
     #{$property}: -moz-calc(#{$expression});
@@ -19,16 +28,36 @@
     -o-transition:      $what $time $how;
     transition:         $what $time $how;
 }
+@mixin  transform ($transform){
+    -webkit-transform: $transform;
+	-moz-transform: $transform;
+	-o-transform: $transform;
+	-ms-transform: $transform;
+	transform: $transform;
+}
+@mixin  transform-origin ($transform-origin){
+    -webkit-transform-origin: $transform-origin;
+	-moz-transform-origin: $transform-origin;
+	-o-transform-origin: $transform-origin;
+	-ms-transform-origin: $transform-origin;
+	transform-origin: $transform-origin;
+}
+
+@mixin backface-visibility {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    }
 
 @mixin keyframe ($name) {
     @-webkit-keyframes #{$name} {
         @content;
     }
-
     @-moz-keyframes #{$name} {
         @content;
     }
-
     @keyframes #{$name} {
         @content;
     }
@@ -48,26 +77,28 @@
                 animation: $name $duration $timing-function $delay $iteration-count $direction $fill-mode $play-state;
 }
 
-/*************************************************************************************
+/*****************************************/
 
-/ -- Slide Animations -- //
-
-// Slide Out Top from Center
-@include keyframe(animation-slide-out-up) {
-    0% {
-        transform: translate(0,0);
-    }
-    100% {
-        transform: translate(0,-100%);
-    }
-}
-
-
-
-***/
-
+$colors:(
+    1: #ce0202,
+    2: #c74002,
+    3: #bb6503,
+    4: #a78601,
+    5: #bed307,
+    6: #5c7e06,
+    7: #035a3a,
+    8: #0e61a8,
+    9: #222e9c,
+    10:#4b0175,
+    11:#8a0157,
+    12:#6d0000   
+);
 
 
-  
 
-  
+@mixin gradient($direction, $list) { 
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list);  
+  }

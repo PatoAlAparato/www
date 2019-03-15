@@ -1,10 +1,10 @@
 import { Component, HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from './components/admin/modal/modal.component';
+import { NgbModal, NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './services/auth.service';
 import * as $ from 'jquery';
 import { from } from 'rxjs';
+import { LoginComponent } from './components/admin/login/login.component';
 declare var $: any;
 
 @Component({
@@ -18,7 +18,8 @@ export class AppComponent {
   public confirmedResult: boolean;
   public inputResult: string;
   public messageResult: boolean;
-
+  public isLogged: boolean;
+  closeResult: string;
 
   constructor(
     private el: ElementRef,
@@ -26,9 +27,10 @@ export class AppComponent {
     private translate: TranslateService,
     public authService: AuthService,
     private modalService: NgbModal
-    )
-  {
+    ){
     this.translate.setDefaultLang(this.activeLang);
+    this.isLogged = this.authService.isLoggedIn;
+      console.log(this.isLogged);
   }
 
 
@@ -56,12 +58,21 @@ export class AppComponent {
 
 
 
-  openModal() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.result.then((result) => {
-      console.log(result);
-    }).catch((error) => {
-      console.log(error);
+  open(content: NgbModalRef) {
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

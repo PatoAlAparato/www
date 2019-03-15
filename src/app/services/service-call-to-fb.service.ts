@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { Skills } from '../models/skills.model';
+import { Portfolio } from '../models/portfolio.model';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 
@@ -11,29 +11,29 @@ import 'firebase/storage';
 export class ServiceCallToFbService {
 
   private dbPath = '/geek';
-  skillsRef: AngularFireList<Skills> = null;
+  portfolioRef: AngularFireList<Portfolio> = null;
 
   constructor(private db: AngularFireDatabase) {
-    this.skillsRef = db.list(this.dbPath);
+    this.portfolioRef = db.list(this.dbPath);
   }
-  createSkill(skll: Skills): void {
-    this.skillsRef.push(skll);
+  createSkill(exp: Portfolio): void {
+    this.portfolioRef.push(exp);
   }
 
   updateSkill(key: string, value: any): void {
-    this.skillsRef.update(key, value).catch(error => this.handleError(error));
+    this.portfolioRef.update(key, value).catch(error => this.handleError(error));
   }
 
   deleteSkill(key: string): void {
-    this.skillsRef.remove(key).catch(error => this.handleError(error));
+    this.portfolioRef.remove(key).catch(error => this.handleError(error));
   }
 
-  getSkillsList(): AngularFireList<Skills> {
-    return this.skillsRef;
+  getportfolioList(): AngularFireList<Portfolio> {
+    return this.portfolioRef;
   }
 
   deleteAll(): void {
-    this.skillsRef.remove().catch(error => this.handleError(error));
+    this.portfolioRef.remove().catch(error => this.handleError(error));
   }
 
   private handleError(error) {

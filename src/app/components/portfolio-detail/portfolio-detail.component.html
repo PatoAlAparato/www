@@ -1,0 +1,20 @@
+<div *ngIf="exp">
+  <div>
+    <label>First Name: </label> {{exp.key}}
+  </div>
+  <div>
+    <label>Age: </label> {{exp.age}}
+  </div>
+  <div>
+    <label>Active: </label> {{exp.active}}
+  </div>
+ 
+  <span class="button is-small btn-primary" *ngIf='exp.active' (click)='updateActive(false)'>Inactive</span>
+ 
+  <span class="button is-small btn-primary" *ngIf='!exp.active' (click)='updateActive(true)'>Active</span>
+ 
+  <span class="button is-small btn-danger" (click)='deleteExperience()'>Delete</span>
+ 
+  <hr/>
+</div>
+

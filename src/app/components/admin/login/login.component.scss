@@ -1,0 +1,9 @@
+@import '../../../../assets/sass/variables';
+@import '../../../../assets/sass/mixins';
+
+:host{
+    padding: 25px;
+    .authBlock{                  
+        @include border-radius(50%);
+    }
+}

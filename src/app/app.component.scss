@@ -85,7 +85,20 @@ header{
             @include border-radius(50%);
             height: $navBarIconSize;                
             border: none;                     
-        }               
+        }    
+        .profilePic{
+            padding: 0;
+            a , img{
+                padding: 0;
+            }
+            img{
+                width: 45px;
+                height: 45px;
+                z-index: 999;
+                
+            }
+            
+        }           
     }     
     .dropdown{
         &-menu{

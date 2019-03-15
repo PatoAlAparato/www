@@ -6,14 +6,50 @@
         "lang": "English",
         "en": "English",
         "es": "Spanish",
-
         "home":"Home",
-        "skills": "Skills",
-        "skills2": "Skills2",
-        "skills3": "Skills3"
+        "portfolio": "Portfolio",
+        "skills":" Skills",
+        "experience": "Experience",
+        "intranet": "Intranet",
+        "contact": "Contact"
     },
     "footer": {
         "author": "Patricia Antón Martín",
         "rights": "All rights reserved."
+    },
+    "": {
+        
+    },
+    "form": {        
+        "register": "Register",
+        "login": "Login",
+        "registro": "Sing up",
+        "registerGoogle": "Register with Google",
+        "loginGoogle": "Login with Google",
+        "email": "Email Address",
+        "password": "Password",
+        "username": "User Name",
+        "redirectToLogin" : "Don't have an account?",
+        "forgotpassword": "Forgot Password?",
+        "continuewithgoogle": "Continue with Google",
+        "or" : "Or"        
+    },
+    "skills":{
+        "angularDesc" : "TODO ENG:Al final todo se puede consultar, y teniendo los conceptos claros Angular puede ser una herramienta muy valiosa. Al final reuno ya 4-5 meses usando Angular, y todo lo mejor de mí lo doy en esta página web.",
+        "html5Desc" : "TODO ENG:Más de una década usando Html, y todos sus avances, cambios, compatibilidades.... que voy a contar a estas alturas de Html5 un pasito necesario del 4.1 transicional",
+        "css3Desc" : "TODO ENG:Css3 también fue una evolución necesaria muy necesaria, y sobretodo nos ha hecho la vida más fácil.",
+        "scssDesc" : "TODO ENG:Aún haymuchas cosas por investigar, todo el potencial usado esta en este portfolio, hay mucha literatura sobre esto y combinado con metodologías tipo BEM y Bootstrap, una forma eficaz y rápida y todavía en evolución",
+        "bootstrap4Desc" : "TODO ENG:Desde Bootstrap 2.3 a Bootstrap 4.x, todo es muy parecido, cada vez más eficaz y ahora implementan Flexbox, rem, y medidas de height y width de viewport que nos hacen la vida muy fácil.",
+        "javaScriptDeSC" : "TODO ENGHonestamente necesito una mano que me acompañe en el desarrollo de javascript nativo aunque he hecho muchas cosas con el Dom y algunos proyectos como un tetrix o una calculadora.",
+        "nodeDesc" : "TODO ENG Uso Node para levantar un servidor, TODO:node apuntes ",
+        "firebaseDesc" : "TODO ENG Uso Firebase para solventar el back y ser autonoma, en el fondo es una herramienta muy fácil de usar ",
+        "responsiveDesc" : "TODO ENG Toda mi vida la mido ya en %. ¿Sabíais que el ser humano posee un 75 % de agua al nacer y cerca del 60 % en la edad adulta?",
+        "userExperienceTit" : "User Experience",
+        "userExperienceDesc" : "TODO ENG Los años de experiencia y la literatura diarua en google hacen que al final los proyectos tengan una base lógica de uso, segun el públicoal que van dirigidos",
+        "designTit" : "Design",
+        "designDesc" : "TODO ENG Uso el paquete Adobe desde hace décadas, estudié guías de diseño y experiencia de usuario, y en muchos proyectos he trabajado en el rol de diseñadora también",
+        "ilustradoraTit" : "TODO ENG Ilustración",
+        "ilustradoraDesc" : "TODO ENG No tiene que ver mucho con el desarrollo front perolo llevo en el corazón y TODO hacer aparatado de galeria firebase"
     }
+    
 }

@@ -15,37 +15,50 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AuthService } from './services/auth.service';
 
 import { HomeComponent } from './components/home/home.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { SkillsDetailComponent } from './components/skills-detail/skills-detail.component';
-import { SkillsCreateComponent } from './components/skills-create/skills-create.component';
-import { SkillsEditComponent } from './components/skills-edit/skills-edit.component';
-
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { UserCreateComponent } from './components/admin/user/user-create.component';
+import { PortfolioEditComponent } from './components/portfolio-edit/portfolio-edit.component';
+import { PortfolioDetailComponent } from './components/portfolio-detail/portfolio-detail.component';
 import { LoginComponent } from './components/admin/login/login.component';
 import { RegisterComponent } from './components/admin/register/register.component';
 import { UserComponent } from './components/admin/user/user.component';
 import { ModalModule } from 'ngb-modal';
+import { ModalWindowModule } from './components/modal-window/modal-window.module';
+import { ModalWindowComponent } from './components/modal-window/modal-window.component';
 import { ForgotPaswordComponent } from './components/admin/forgot-pasword/forgot-pasword.component';
 import { VerifyEmailComponent } from './components/admin/verify-email/verify-email.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { DropZoneDirective } from './directives/drop-zone.directive';
+import { UploadFileComponent } from './components/admin/upload-file/upload-file.component';
+import { FileSizePipe } from './file-size.pipe';
+import { GalleryComponent } from './components/admin/gallery/gallery.component';
 
-import { ModalComponent } from './components/admin/modal/modal.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SkillsComponent,
-    SkillsDetailComponent,
-    SkillsCreateComponent,
-    SkillsEditComponent,
-    ModalComponent,
+    PortfolioComponent,
+    PortfolioDetailComponent,
+    UserCreateComponent,
+    PortfolioEditComponent,
     LoginComponent,
     RegisterComponent,
     UserComponent,
     ForgotPaswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    SkillsComponent,
+    DropZoneDirective,
+    UploadFileComponent,
+    FileSizePipe,
+    GalleryComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -53,11 +66,13 @@ import { ModalComponent } from './components/admin/modal/modal.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     NgbModule,
     ModalModule,
+    ModalWindowModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -69,10 +84,10 @@ import { ModalComponent } from './components/admin/modal/modal.component';
   ],
   providers: [AuthService],
   entryComponents: [
+    ModalWindowComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent,
-    ModalComponent
+    UserComponent
   ],
   bootstrap: [AppComponent]
 })

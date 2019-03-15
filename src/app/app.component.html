@@ -5,35 +5,46 @@
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#duckyNav" aria-controls="duckyNav" 
     aria-expanded="false" aria-label="Toggle navigation" (click)='navToggle($event)'>
-    <svg viewBox="0 0 800 600">
-      <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
-      <path d="M300,320 L540,320" id="middle"></path>
-      <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
-    </svg>
+      <svg viewBox="0 0 800 600">
+        <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+        <path d="M300,320 L540,320" id="middle"></path>
+        <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+      </svg>
     </button>
   
     <div class="collapse navbar-collapse" id="duckyNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['']"   >{{ 'nav.home' | translate }} <span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['']">{{ 'nav.home' | translate }} <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['skills']" >{{ 'nav.skills' | translate }}</a>
+            <a class="nav-link" [routerLink]="['skills']">{{ 'nav.skills' | translate }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['register']" >{{ 'nav.skills2' | translate }} </a>
+            <a class="nav-link" [routerLink]="['portfolio']">{{ 'nav.portfolio' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['register']" >{{ 'nav.portfolio2' | translate }} </a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ 'nav.lang' | translate }}
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">              
               <a class="dropdown-item" href="#" [ngClass]="{'active': activeLang == 'es'}" (click)="changeLang('es')">{{ 'nav.es' | translate }}</a>
               <a class="dropdown-item" href="#" [ngClass]="{'active': activeLang == 'en'}" (click)="changeLang('en')">{{ 'nav.en' | translate }}</a>                
             </div>
           </li>
-          <li class="nav-item"> <a  class="lnr lnr-power-switch" [routerLink]="[{outlets: {'modal': ['login']}}]" ></a></li>
-          <li class="nav-item"><a class="dropdown-item" href="#" [ngClass]="{'active': activeLang == 'en'}" (click)="authService.LogOut()">Logout</a></li>
+          <li class="nav-item"><a *ngIf="isLogged == false" class="lnr lnr-power-switch" data-toggle="modal" (click)="open(login)"></a></li>
+          
+          <li class="nav-item dropdown profilePic" *ngIf="isLogged">
+              <a class="nav-link dropdown-toggle"  [routerLink]="['user']" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <img class="" src="../assets/svg/dummiPic.svg" alt="">
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">              
+                  <li class="nav-item"><a  class="dropdown-item" href="#" [ngClass]="{'active': activeLang == 'en'}" (click)="authService.LogOut()">Logout</a></li>               
+              </ul>
+            </li>
       </ul>        
     </div>
      
@@ -44,7 +55,6 @@
 
   <div class="container-fluid">     
     <router-outlet></router-outlet>
-    <router-outlet name="modal"></router-outlet>
   </div>
 
 
@@ -64,5 +74,16 @@
       </div>
   </div>
 </footer>
+
+
+
+<ng-template #login let-c="close" let-d="dismiss">
+  <app-modal-window [title]="'Login'" [close]="c" [dismiss]="d">
+    <app-login ></app-login>
+  </app-modal-window>
+</ng-template>
+
+
+
 
 </div>

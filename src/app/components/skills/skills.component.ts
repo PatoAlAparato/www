@@ -1,41 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ServiceCallToFbService } from '../../services/service-call-to-fb.service';
-import { UploadImageService} from '../../services/upload-image.service';
-import { Skills } from '../../models/skills.model';
-import { Upload} from '../../models/upload.model';
-import { map } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import * as $ from 'jquery';
 
-
+declare var $: any;
+declare var extJq: any;
+declare var jQuery: any;
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
+  public activeLang = 'es';
+  constructor( private translate: TranslateService) {
+    this.translate.setDefaultLang(this.activeLang);
+   }
 
-  skills: any;
-  constructor( private serviceCallToFbService: ServiceCallToFbService, private uploadImageService: UploadImageService) { }
-
+  
+  public changeLang(lang) {
+    this.activeLang = lang;
+    this.translate.use(lang);
+  }
   ngOnInit() {
-    this.getSkillsList();
-    this.uploadImageService.getFileUploads(6).snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-      )
-    ).subscribe(fileUploads => {
-      this.skills = fileUploads;
-    });
-  }
-  getSkillsList(){
-    this.serviceCallToFbService.getSkillsList().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-      )
-    ).subscribe(skills => {
-      this.skills = skills;
-    });
-  }
-  deleteSkills() {
-    this.serviceCallToFbService.deleteAll();
+    (function($) {
+      $('#duckySkills').swatchbook();
+    })(jQuery);
   }
 }
